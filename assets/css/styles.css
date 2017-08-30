@@ -1,0 +1,37 @@
+html{
+
+    //background-image: url("/assets/images/spacebackground.jpg");
+    /*background-size: cover;*/
+}
+body{
+
+    background-color: #58cd41;
+    /*background-image: url("/assets/images/spacebackground.jpg");*/
+}
+.titleText{
+
+    font-family: 'Frijole', cursive;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+}
+
+.preGameText{
+
+    font-size: 20px;
+    font-family: 'Baloo Bhaijaan', cursive;
+    color: white;
+
+}
+
+.gameText{
+
+    font-size: 25px;
+    font-family: 'Baloo Bhaijaan', cursive;
+    color: white;
+
+}
+
+
+
+

@@ -1,2 +1,2 @@
-# Hangman-Game
-Initial Hangman game files.
+# Psychic-Game
+Psychic game with javascript.

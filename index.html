@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <!--HEAD-->
+    <head>
+
+
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link href="https://fonts.googleapis.com/css?family=Frijole" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/0f97643179.js"></script>
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+    </head>
+
+    <!--BODY -->
+    <body>
+        <!--MAIN CONTAINER-->
+        <div class="container">
+
+            <div class="row">
+                <!--top image-->
+                <div class="col-12">
+                    <p class="titleText pt-5">Hangman Game</p>
+                </div>
+            </div>
+
+            <div id="gameInfo" class= "row">
+                    <!--game information -->
+                    <div class = "col-3"></div>
+
+                    <div class ="col-6">
+
+                    <!-- ************************* START ************************************************************* -->
+                    <!-- ********************************************************************************************* -->
+
+                            <div id="preGameText" class="preGameText text-center pb-5"><span><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                                Press any key to get started! <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span></div>
+
+                            <div id="numberOfWins" class="gameText text-left"> Number of wins: 0 </div>
+                            <div id="wordWithSpaces" class="gameText text-left"> Current word: </div>
+                            <div id="numberOfGuesses" class="gameText text-left "> Guesses Remaining: </div>
+                            <div id = "lettersAlreadyGuessed" class="gameText text-left"> Letter already guessed:</div>
+                    </div>
+
+                    <div class = "col-3"></div>
+
+
+            </div>
+                <!-- ********************************************************************************************** -->
+                <!-- ************************* END **************************************************************** -->
+
+        </div>
+
+
+
+        <!--BOOTSTRAP and JS STUFF -->
+
+        <script  src="assets/javascript/game.js"></script>
+
+
+    </body>
+    <!--BODY END -->
+</html>
