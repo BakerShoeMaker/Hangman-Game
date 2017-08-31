@@ -1,2 +1,2 @@
-# Psychic-Game
-Psychic game with javascript.
+# Hangman-Game
+Hangman game with javascript.
