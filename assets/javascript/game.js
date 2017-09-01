@@ -1,15 +1,23 @@
 //VARIABLES: Establish variables.
 
-var keyPressed;
+var keyPressed; // records the key that is pressed.
 var keyPressedCount = 0; //Check to see if it is the first time clicked.
-var wins = 0;
+//var wins = 0;
 var guessesRemaining = 5;
-
+var underscores = "";
 
 //Create word to be guessed.
 var easyWordBank = ["cat", "dog", "frog", "cow", "pig"];
 var lettersGuessed = [];
 var currentWordToGuess = "";
+var endOfGameText = "";
+
+//experimental
+var firstLetter = "";
+var secondLetter = "";
+var thirdLetter = "";
+var fourthLetter = "";
+
 
 //EVENT LISTENER: Create event listener for any key that is pressed.
 document.onkeyup = function(event)
@@ -44,39 +52,97 @@ document.onkeyup = function(event)
         document.getElementById("preGameText").innerHTML = "Guess the letter!";
         generateWord();
         fillTextFields();
-
     }
 
+    //fills the text fields
     function fillTextFields()
     {
         lettersGuessed.push(keyPressed);
+
+        //add underscores
+        if(keyPressedCount == 1) {
+            for (var i = 0; i < currentWordToGuess.length; i++) {
+                underscores = underscores.concat() + " ___ ,";
+                console.log(underscores);
+            }
+        }
+
+        //Check for win ??????????????????????????????????????
+        firstLetter = currentWordToGuess.charAt(0);
+        secondLetter = currentWordToGuess.charAt(1);
+        thirdLetter = currentWordToGuess.charAt(2);
+        fourthLetter = currentWordToGuess.charAt(3);
+
+        //How do I check for to see if individual guesses/letters = the current word.
+        //Add sound and a sprite sheet?
         guessesRemaining -=1;
         console.log(guessesRemaining);
+
+        //check the word inside
+        checkEachLetter();
+
         //Game is over
         if(guessesRemaining ==0)
         {
-            //document.getElementById("preGameText").innerHTML = "Try again? The word is " +currentWordToGuess " . Press any key to play again.";
-            document.getElementById("numberOfWins").innerHTML = " Number of wins:  " +wins;
-            document.getElementById("wordWithSpaces").innerHTML = " Current word hint:  " +currentWordToGuess;
-            document.getElementById("numberOfGuesses").innerHTML = "Guesses Remaining:  " +guessesRemaining;
-            document.getElementById("lettersAlreadyGuessed").innerHTML = "Letter already guessed:  " +lettersGuessed; //How do I get to display without comma, e.g. ,r,d,j
-
-            //Reset variables
-            lettersGuessed = [];
-            keyPressedCount = 0;
-            guessesRemaining = 5;
-            currentWordToGuess ="";
-            //playAgain();
+            gameOver();
         }
         else{
-            document.getElementById("numberOfWins").innerHTML = " Number of wins:  " +wins;
-            document.getElementById("wordWithSpaces").innerHTML = " Current word hint:  " +currentWordToGuess; //How do I put spaces (___, ___, ___) For loop?
+            //document.getElementById("numberOfWins").innerHTML = " Number of wins:  " +wins;
+            document.getElementById("wordWithSpaces").innerHTML = " Current word hint:  " +underscores; //How do I put spaces
             document.getElementById("numberOfGuesses").innerHTML = "Guesses Remaining:  " +guessesRemaining;
             document.getElementById("lettersAlreadyGuessed").innerHTML = "Letter already guessed:  " +lettersGuessed;
             //append?
         }
 
     }
+
+    //Checks/finds each letter in the word
+    function checkEachLetter()
+    {
+        for(var i =0; i< currentWordToGuess.length; i++)
+        {
+            currentWordToGuess.charAt(i);
+            console.log(currentWordToGuess.charAt(i));
+        }
+
+
+        // firstLetter = currentWordToGuess.charAt(0);
+        // secondLetter = currentWordToGuess.charAt(1);
+        // thirdLetter = currentWordToGuess.charAt(2);
+        // fourthLetter = currentWordToGuess.charAt(3);
+
+        // console.log(firstLetter);
+        // console.log(secondLetter);
+        // console.log(thirdLetter);
+        // console.log(fourthLetter);
+
+
+        //return firstLetter;
+    }
+
+//game is over
+function gameOver()
+{
+    endOfGameText = "The word is " +currentWordToGuess +" . Press any key to start over";
+    document.getElementById("preGameText").innerHTML = endOfGameText;
+    //<i class="fa fa-arrow-left" aria-hidden="true"></i>
+    //document.getElementById("numberOfWins").innerHTML = " Number of wins:  " +wins;
+    document.getElementById("wordWithSpaces").innerHTML = " Current word hint:  " +underscores;
+    document.getElementById("numberOfGuesses").innerHTML = "Guesses Remaining:  " +guessesRemaining;
+    document.getElementById("lettersAlreadyGuessed").innerHTML = "Letter already guessed:  " +lettersGuessed; //How do I get to display without comma, e.g. ,r,d,j
+
+    //Check to see if there is a winner (word has been solved).
+
+    //Reset variables
+    lettersGuessed = [];
+    keyPressedCount = 0;
+    underscores = "";
+    guessesRemaining = 5;
+    currentWordToGuess ="";
+    //playAgain();
+}
+
+
 
     //User plays the game again.
     // function playAgain(){
@@ -89,30 +155,7 @@ document.onkeyup = function(event)
 
 
 
-//Output - Create question
-    //1) <p> The word is _______________ ? </p>
-    //2) <p> Try and guess 1 letter of the word I'm and thinking! </p>
-    //3) <p> Enter the letter on your keyboard </p>
-        //4) <p> Number of Guesses Remaining: </p>
-        //5) <p> Letters Already Guessed: </p> push letters guess into an array (array.push()).
 
-//*After the user wins/loses the game should automatically choose another word and make the user play it.
-
-//Create logic for figuring out letter typed in.
-    //1 If letter typed in === letter in word
-            //Do something here.
-
-    //2 If letter typed in != letter in word
-            //Do something here.
-
-    //Check to see if number of guesses = 9
-            //If === 9 then game over.
-
-                //If game over then stop (add
-            //If they guess the whole word then ("Yeah! You are awesome!, then start over, reset the variables).
-
-
-//Output - Provide the answers
 
 
 

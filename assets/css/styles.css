@@ -1,12 +1,10 @@
-html{
 
-    //background-image: url("/assets/images/spacebackground.jpg");
-    /*background-size: cover;*/
-}
+
 body{
+    background-image: url("../images/spacebackground.jpg");
+    background-size: cover;
+//background-color: #612fcd;
 
-    background-color: #58cd41;
-    /*background-image: url("/assets/images/spacebackground.jpg");*/
 }
 .titleText{
 
@@ -31,6 +29,14 @@ body{
     color: white;
 
 }
+.loseText{
+
+    font-size: 25px;
+    font-family: 'Baloo Bhaijaan', cursive;
+    color: purple;
+
+}
+
 
 
 

@@ -1,0 +1,32 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:6c289c34b8c24203178347cc381b2901:d0cd754a8ec168c4d0990230bc950f69:168009d51c119071cbd7a1e9f8b0e226$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+@keyframes play {
+    100% { background-position: -1616px; }
+}
+
+.sprite {
+    display:inline-block;
+    overflow:hidden;
+    background-repeat: no-repeat;
+    background-image:url(monsterSprite.png);
+    animation: play 1s steps(8) infinite;
+
+}
+
+.Artboard-1 {width:200px; height:200px; background-position: -1px -1px}
+.Artboard-2 {width:200px; height:200px; background-position: -203px -1px}
+.Artboard-3 {width:200px; height:200px; background-position: -405px -1px}
+.Artboard-4 {width:200px; height:200px; background-position: -607px -1px}
+.Artboard-5 {width:200px; height:200px; background-position: -809px -1px}
+.Artboard-6 {width:200px; height:200px; background-position: -1011px -1px}
+.Artboard-7 {width:200px; height:200px; background-position: -1213px -1px}
+.Artboard-8 {width:200px; height:200px; background-position: -1415px -1px}
