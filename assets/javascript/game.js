@@ -99,8 +99,10 @@ document.onkeyup = function(event)
         fourthLetter = currentWordToGuess.charAt(3);
 
         //How do I check for to see if individual guesses/letters = the current word.
-        //Add sound and a sprite sheet?
-        guessesRemaining -=1;
+        if(keyPressedCount>1){
+            guessesRemaining -=1;
+        }
+
         //console.log(guessesRemaining);
 
         //check the word inside
@@ -110,6 +112,7 @@ document.onkeyup = function(event)
                 {
                     //play correct sound.
                     console.log("You got a letter!" +keyPressed);
+                    document.getElementById("preGameText").innerHTML = "Yes! You got the letter!: " +keyPressed;
                     soundCorrect.play();
                 }
                 else
@@ -128,7 +131,10 @@ document.onkeyup = function(event)
             //document.getElementById("numberOfWins").innerHTML = " Number of wins:  " +wins;
             document.getElementById("wordWithSpaces").innerHTML = " Current word hint:  " +underscores; //How do I put spaces
             document.getElementById("numberOfGuesses").innerHTML = "Guesses Remaining:  " +guessesRemaining;
-            document.getElementById("lettersAlreadyGuessed").innerHTML = "Letter already guessed:  " +lettersGuessed;
+            if(keyPressedCount>1){
+                document.getElementById("lettersAlreadyGuessed").innerHTML = "Letter already guessed:  " +lettersGuessed;
+            }
+
             //append?
             //console.log("Key press count: " +keyPressedCount);
         }
