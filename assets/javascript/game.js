@@ -18,10 +18,12 @@ var secondLetter = "";
 var thirdLetter = "";
 var fourthLetter = "";
 
+//ar gameSound = new sound("../sounds/backgroundGameSound.mp3");
 
 //EVENT LISTENER: Create event listener for any key that is pressed.
 document.onkeyup = function(event)
 {
+
     keyPressed = event.key; //Determines which key is pressed
     //Determine if this is the first time the user clicks the button
     keyPressedCount++;
@@ -39,7 +41,11 @@ document.onkeyup = function(event)
 
 //FUNCTIONS
 
-    //Generates the word
+    function  playSound(){
+    gameSound.play();
+     }
+
+     //Generates the word
     function generateWord()
     {
         var calculateWordPosition = Math.floor(Math.random() * easyWordBank.length);

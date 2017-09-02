@@ -1,15 +1,18 @@
 
 
 body{
-    background-image: url("../images/spacebackground.jpg");
+    //background-image: url("../images/spacebackground.jpg");
+    //background-image: url("../images/zombie_1.jpg");
+    background-image: url("../images/zombie_2.jpg");
     background-size: cover;
-//background-color: #612fcd;
+    //background: no-repeat;
+    //background-color: #612fcd;
 
 }
 .titleText{
 
     font-family: 'Frijole', cursive;
-    font-size: 60px;
+    font-size: 90px;
     color: white;
     text-align: center;
 }
