@@ -11,7 +11,7 @@ var easyWordBank = ["cat", "dog", "can", "cow", "pig"];
 var lettersGuessed = []; //When user inputs letter
 var currentWordToGuess = ""; //Word that is generated from easyWordBank.
 var answerArray = [];
-
+var compareArray = [];
 var endOfGameText = "";
 
 //experimental
@@ -107,14 +107,35 @@ document.onkeyup = function(event)
 
         //check the word inside
         checkEachLetter();
+        //This is not working. I want to put the key pressed in the array at the correct position so that I can compare the word against the key pressed.
         if(keyPressedCount > 1){
-                if(keyPressed == answerArray[0] || keyPressed == answerArray[1] || keyPressed == answerArray[2] )//what about words > 3?
+                if(keyPressed == answerArray[0])//what about words > 3?
                 {
                     //play correct sound.
                     console.log("You got a letter!" +keyPressed);
                     document.getElementById("preGameText").innerHTML = "Yes! You got the letter!: " +keyPressed;
                     soundCorrect.play();
+                    compareArray.push(keyPressed[0]);
+
                 }
+            if(keyPressed == answerArray[1])//what about words > 3?
+            {
+                //play correct sound.
+                console.log("You got a letter!" +keyPressed);
+                document.getElementById("preGameText").innerHTML = "Yes! You got the letter!: " +keyPressed;
+                soundCorrect.play();
+                compareArray.push(keyPressed[1]);
+
+            }
+            if( keyPressed == answerArray[2] )//what about words > 3?
+            {
+                //play correct sound.
+                console.log("You got a letter!" +keyPressed);
+                document.getElementById("preGameText").innerHTML = "Yes! You got the letter!: " +keyPressed;
+                soundCorrect.play();
+                compareArray.push(keyPressed[2]);
+
+            }
                 else
                 {
                     //play incorrect sound.
@@ -134,7 +155,7 @@ document.onkeyup = function(event)
             if(keyPressedCount>1){
                 document.getElementById("lettersAlreadyGuessed").innerHTML = "Letter already guessed:  " +lettersGuessed;
             }
-
+            console.log("This is what is in the compare array: " +compareArray);
             //append?
             //console.log("Key press count: " +keyPressedCount);
         }
